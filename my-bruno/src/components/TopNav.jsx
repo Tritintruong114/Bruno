@@ -19,9 +19,9 @@ function TopNav() {
         <h1>Bruno</h1>
       </div>
       <div
-        className={`flex ${
+        className={` ${
           !clickMenu ? "opacity-100" : "opacity-0"
-        } flex-col items-center absolute right-3 top-3 bg-white w-full`}
+        } grid md:flex md:top-0 md:right-0 md:relative md:opacity-100 items-center justify-center md:px-3 md:justify-end gap-3 absolute right-3 top-3 bg-white w-full`}
       >
         <Link to={"home"}>
           <button>Home</button>
@@ -40,11 +40,17 @@ function TopNav() {
         </Link>
       </div>
       {clickMenu ? (
-        <div className="absolute right-6 top-4" onClick={() => handleClick()}>
+        <div
+          className="absolute md:opacity-0 right-6 top-4"
+          onClick={() => handleClick()}
+        >
           <UilBars />
         </div>
       ) : (
-        <div className="absolute right-6 top-4" onClick={() => handleClick()}>
+        <div
+          className="absolute md:opacity-0 right-6 top-4"
+          onClick={() => handleClick()}
+        >
           <UilMultiply />
         </div>
       )}
